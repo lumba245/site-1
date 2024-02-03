@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Галерея работ{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="banner-heading h1 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">Наша галерея</h1>
+
+        <div class="row">
+        {% for image in images %}
+            <div class="col-lg-3 col-md-4 col-6 mb-4">
+            <a href="#image{{ image.id }}" data-toggle="modal" data-target="#image{{ image.id }}Modal">
+                <img src="{{ url_for('static', filename='img/gal/' + image.image) }}" class="img-fluid rounded" alt="{{ image.alt }}">
+            </a>
+            </div>
+            <div class="modal fade" id="image{{ image.id }}Modal" tabindex="-1" role="dialog" aria-labelledby="image{{ image.id }}ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ url_for('static', filename='img/gal/' + image.image) }}" class="img-fluid rounded" alt="{{ image.alt }}">
+                </div>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div> <!-- Закрывающий тег для контейнера -->
+
+    <!-- Подключение Bootstrap JS (необходимо для некоторых компонентов) и Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock %}
+

@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}О нас{% endblock %}
+
+
+
+{% block content %}
+    <!-- Start Banner Hero -->
+    <section class="bg-light w-100">
+        <div class="container">
+            <div class="row d-flex align-items-center py-5">
+                <div class="col-lg-6 text-start">
+                    <h1 class="h2 py-5 text-primary typo-space-line">О нашей компании</h1>
+                    <p class="light-300">
+                        ООО "Царская Плитка" - это не только производственная база, но и магазин, а также исполнитель строительных заказов.
+                        Мы специализируемся на создании изделий из бетона, в частности, тротуарной плитки.
+                        В последние годы тротуарная плитка завоевала популярность благодаря своей доступной цене и удобству использования.
+                        Она предназначена для облицовки улиц, скверов и площадей, превосходя асфальт по экологичности и сроку службы. 
+                        Компания "АртСтрой" успешно функционирует в этой области в течение 8 лет, заслужив репутацию ответственного предприятия, предоставляющего качественные изделия, подтвержденные соответствующими сертификатами.
+                        Низкая стоимость и высокое качество нашей продукции обеспечиваются тем, что мы являемся производителями, и наши клиенты избегают дополнительных расходов на услуги посредников. 
+                        Используя современные технологии, мы производим тротуарную плитку и другие изделия, обеспечивая высокую надежность и долгий срок службы. В производстве мы используем только качественное сырье, а опыт наших сотрудников гарантирует высший стандарт качества.
+                    </p>
+                </div>
+                <div class="col-lg-6 " >
+                    <img class="mash-able-image"  src="{{ url_for('static', filename='img/1banner-img-03.svg') }}">
+                </div>
+            </div>
+        </div>
+    </section>  
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Team Member -->
+    <section class="container py-5">
+        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
+
+            <div class="col-lg-3">
+                <h2 class="h2 py-5 typo-space-line">Наши услуги</h2>
+                <p class="text-muted light-300">
+                    Мы являемся экспертами в области безопасной доставки строительных материалов, гарантируя, что каждая поставка осуществляется с соблюдением высоких стандартов безопасности. 
+                    Наша специализация также включает в себя качественное благоустройство территории и производство уникальной плитки, создавая пространства, сочетающие в себе безопасность, эстетику и функциональность.
+                </p>
+            </div>
+
+            <div class="col-lg-9 row">
+                <div class="team-member col-md-4">
+                    <!-- <img class="team-member-img img-fluid rounded-circle p-4" src="./assets/img/team-01.jpg" alt="Card image"> -->
+                    <img class="team-member-img img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-01.jpg') }}" alt="Example Image">
+                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                        <li>Благоустройство территории</li>
+                    </ul>
+                </div>
+                <div class="team-member col-md-4">
+                    <!-- <img class="team-member-img img-fluid rounded-circle p-4" src="./assets/img/team-02.jpg" alt="Card image"> -->
+                    <img class="team-member-img img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-03.jpg') }}" alt="Example Image">
+                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                        <li>Производство плитки</li>
+                    </ul>
+                </div>
+                <div class="team-member col-md-4">
+                    <!-- <img class="team-member-img img-fluid rounded-circle p-4" src="./assets/img/team-03.jpg" alt="Card image"> -->
+                    <img class="team-member-img img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-02.jpg') }}" alt="Example Image">
+                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                        <li>Безопастная доставка</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Team Member -->
+
+
+
+    <!-- Start Choice -->
+    <section class="why-us banner-bg bg-light">
+        <div class="container my-4">
+            <div class="row">
+                <div class="banner-img col-lg-5">
+                    <img src="{{ url_for('static', filename='img/work.svg') }}" class="rounded img-fluid" alt="">
+                </div>
+                <div class="banner-content col-lg-7 align-self-end">
+                    <h2 class="h2 pb-3">Почему вам стоит выбрать нас?</h2>
+                    <ul class="text-muted light-300">
+                        <li>
+                            <strong>Опыт и Профессионализм:</strong>
+                            <p>Мы обладаем многолетним опытом в сфере производства строительных материалов и установки покрытий. Наши сотрудники - высококвалифицированные специалисты, готовые воплотить ваши идеи в реальность.</p>
+                        </li>
+                        
+                        <li>
+                            <strong>Качество и Инновации:</strong>
+                            <p>Наше производство использует современные технологии для создания продукции высокого качества. Мы постоянно следим за инновациями в отрасли, чтобы предоставлять вам самые современные и долговечные решения.</p>
+                        </li>
+                        
+                        <li>
+                            <strong>Разнообразие и Дизайн:</strong>
+                            <p>Наш ассортимент предлагает разнообразие дизайнов и стилей, позволяя вам выбирать оптимальное решение под ваш проект. Мы готовы предложить индивидуальные решения для каждого клиента.</p>
+                        </li>
+                        
+                        <li>
+                            <strong>Гибкий График и Клиентоориентированный Подход:</strong>
+                            <p>Мы предлагаем гибкий график работы и стремимся удовлетворить все ваши потребности. Клиентоориентированный подход - наш приоритет.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Choice -->
+
+    <!-- Start Aim -->
+    <section class="banner-bg bg-white py-5">
+        <div class="container my-4">
+            <div class="row text-center">
+
+                <div class="objective col-lg-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class="display-4 bx bxs-bulb text-light"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Собственное производство</h2>
+                    <p class="light-300">
+                        Мы используем исключительно современное оборудование, а наши специалисты обладают обширным опытом в производстве строительных материалов.
+                    </p>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class='display-4 bx bx-revision text-light'></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Удобная и быстрая доставка</h2>
+                    <p class="light-300">
+                        Мы предлагаем доставку в тот же день или в удобное для вас время. Доставка доступна как в будние дни, так и в выходные, предварительно согласовывая время с вами.
+                    </p>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class="display-4 bx bxs-select-multiple text-light"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Высококачественные услуги</h2>
+                    <p class="light-300">
+                        Компания "Царская Плитка" специализируется в производстве тротуарных плит и брусчатки, а также предоставляет услуги по установке бордюров и тротуарных плит и прочее.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Aim -->
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Templatemo -->
+    <script src="{{ url_for('static', filename='js/templatemo.js') }}"></script>
+    
+    <!-- Custom -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+
+{% endblock %}

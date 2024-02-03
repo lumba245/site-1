@@ -1,0 +1,143 @@
+/*
+Custom CSS for TemplateMo 561 Purple Buzz
+
+https://templatemo.com/tm-561-purple-buzz
+
+*/
+
+
+.custom-icon {
+    background-image: url('static/img/apple-icon.png'); /* Указываете путь к вашей иконке */
+    background-size: contain; /* Размер изображения будет подстраиваться так, чтобы полностью умещаться в контейнере */
+    width: 20px; /* Ширина вашей иконки */
+    height: 20px; /* Высота вашей иконки */
+    display: inline-block; /* Чтобы можно было задать размеры */
+}
+
+
+.mash-able-image {
+  max-width: 100%; /* Максимальная ширина изображения равна ширине родительского контейнера */
+  height: auto; /* Высота изображения автоматически рассчитывается, чтобы сохранить пропорции */
+  display: block; /* Сделать изображение блочным элементом, чтобы можно было задать отступы */
+  margin: 0 auto; /* Центрировать изображение внутри родительского контейнера */
+}
+
+        /* Добавленные пользовательские стили */
+        .custom-modal {
+            max-width: 1200px;
+        }
+
+        .modal-image {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .modal-image img {
+            max-height: 400px; /* Максимальная высота изображения */
+            width: auto;
+        }
+
+        .modal-content {
+            overflow: hidden;
+        }
+
+        .modal-body {
+            overflow: hidden;
+        }
+
+        .filter-container {
+            background-color: #343a40; /* Цвет фона */
+            padding: 15px 0; /* Внутренний отступ сверху и снизу */
+        }
+
+        .filter-btn {
+            border-color: #fff; /* Цвет рамки кнопок фильтра */
+        }
+
+        .filter-btn.active {
+            color: #fff; /* Цвет текста активной кнопки фильтра */
+        }
+
+        .item {
+            transition: transform 0.3s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .card {
+            border: 1px solid #6266ea;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            font-size: 20px;
+        }
+
+
+        .table-container {
+            max-width: 900px;
+            margin: auto;
+            }
+            
+            .table th, .table td {
+            text-align: center;
+            }
+            
+            .table thead th {
+            background-color: #007bff;
+            color: #ffffff;
+            }
+            
+            .table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+            }
+
+
+
+
+
+
+
+
+
+
+

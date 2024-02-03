@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block title %}Связаться с нами{% endblock %}
+
+{% block content %}
+    <!-- Start Banner Hero -->
+    <section class="bg-light">
+        <div class="container py-4">
+            <div class="row align-items-center justify-content-between">
+                <div class="contact-header col-lg-4">
+                    <h1 class="h2 pb-3 text-primary">Свяжитесь с нами</h1>
+                    <h3 class="h4 regular-400">Мы ждем вашего звонка</h3>
+                    <p class="light-300">
+                        Наша горячая линия доступна круглосуточно, 24/7, чтобы ответить на ваши вопросы и предоставить поддержку в выборе и реализации ваших идей.
+                    </p>
+                </div>
+                <div class="contact-img col-lg-5 align-items-end col-md-4">
+                    <img src="{{ url_for('static', filename='img/banner-img-01.svg') }}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Contact -->
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Заполните форму для обратной связи</h1>
+        <h2 class="col-12 col-xl-8 h4 text-left regular-400">Наши специалисты свяжутся с вами в кратчайшие сроки.</h2>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+            Пожалуйста, заполните форму ниже, чтобы оформить ваш заказ. Наши опытные специалисты свяжутся с вами в кратчайшие сроки для уточнения деталей и обеспечения наилучшего обслуживания.
+        </p>
+
+        <div class="row pb-4">
+            <div class="col-lg-4">
+
+                <div class="contact row mb-4">
+                    <div class="contact-icon col-lg-3 col-3">
+                        <div class="py-3 mb-2 text-center border rounded text-secondary">
+                            <i class='display-6 bx bx-news'></i>
+                        </div>
+                    </div>
+                    <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
+                        <li class="h5 mb-0">Наш номер телефона</li>
+                        <li class="text-muted">Звоните нам в любое время!</li>
+                        <li class="text-muted">+79046912904</li>
+                    </ul>
+                </div>
+
+                <div class="contact row mb-4">
+                    <div class="contact-icon col-lg-3 col-3">
+                        <div class="border py-3 mb-2 text-center border rounded text-secondary">
+                            <i class='bx bx-laptop display-6' ></i>
+                        </div>
+                    </div>
+                    <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                        <li class="h5 mb-0">Наша почта</li>
+                        <li class="text-muted">Ответим на ваши вопросы</li>
+                        <li class="text-muted">carskayaplitka001@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="contact row mb-4">
+                    <div class="contact-icon col-lg-3 col-3">
+                        <div class="border py-3 mb-2 text-center border rounded text-secondary">
+                            <i class='bx bx-money display-6'></i>
+                        </div>
+                    </div>
+                    <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                        <li class="h5 mb-0">Наши координаты</li>
+                        <li class="text-muted">Кольцевое шоссе, 1/5, деревня Аленино, Киржачский район, Владимирская область</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- Start Contact Form -->
+            <div class="col-lg-8">
+                <form class="contact-form row" id="contactForm" role="form" action="{{ url_for('send_email') }}" method="post">
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="inputname" placeholder="Name">
+                            <label for="floatingname light-300">Имя</label>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingemail" name="inputemail" placeholder="Email">
+                            <label for="floatingemail light-300">Почта</label>
+                        </div>
+                    </div>
+            
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputphone" placeholder="Subject">
+                            <label for="floatingsubject light-300">Номер телефона</label>
+                        </div>
+                    </div>
+            
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control light-300" rows="8" placeholder="Message" id="floatingtextarea" name="floatingtextarea"></textarea>
+                            <label for="floatingtextarea light-300">Сообщение нам</label>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Отправить</button>
+                    </div>
+                </form>
+            </div>
+    </section>
+    <!-- End Contact -->
+
+
+    <!-- Map -->
+    <div  id="map" style="width: 100%; height: 600px"></div>
+
+
+    <script type="text/javascript">
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [56.112568, 38.620317],
+                zoom: 17
+            });
+    
+            // Создаем метку.
+            var myPlacemark = new ymaps.Placemark([56.112568, 38.620317], {
+                hintContent: 'ЦАРСКАЯ ПЛИТКА',
+                balloonContent: 'ЦАРСКАЯ ПЛИТКА',
+                iconCaption: 'ЦАРСКАЯ ПЛИТКА'  // Добавляем подпись
+            });
+    
+            // Добавляем метку на карту.
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+
+
+    
+    <script>
+        function submitOrder(event) {
+            event.preventDefault();  // Предотвращаем стандартное поведение формы (переход на другую страницу)
+    
+            var form = document.getElementById("contactForm");
+            // Проверка на заполненность всех полей
+            if (!form.checkValidity()) {
+                alert("Пожалуйста, заполните все поля формы.");
+                return;
+            }
+    
+            var formData = new FormData(form);
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", form.action, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onload = function () {
+                var response = JSON.parse(xhr.responseText);
+                if (xhr.status === 200 && response.success) {
+                    // Показать уведомление на текущей странице
+                    alert(response.success);
+                } else if (response.error) {
+                    // Показать уведомление об ошибке, если есть
+                    alert(response.error);
+                }
+            };
+            xhr.send(new URLSearchParams(formData));
+        }
+    
+        // Добавляем обработчик события submit к форме
+        var form = document.getElementById("contactForm");
+        form.addEventListener("submit", submitOrder);
+    </script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Templatemo -->
+    <script src="{{ url_for('static', filename='js/templatemo.js') }}"></script>
+    <!-- Custom -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+
+{% endblock %}
